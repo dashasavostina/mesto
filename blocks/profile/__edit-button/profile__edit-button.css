@@ -1,5 +1,5 @@
 .profile__edit-button {
-    outline: 1px solid #fff;
+    border: 1px solid #fff;
     width: 24px;
     height: 24px;
     background-image: url(../../../images/profile__edit-button.svg);
