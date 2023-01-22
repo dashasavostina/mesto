@@ -7,6 +7,9 @@
     margin-top: 30px;
     margin-right: 21px;
     padding: 0;
+    transition: 0.5s ease-in-out;
+    background-color: transparent;
+    border: none;
   }
   
   @media screen and (max-width: 768px) {
@@ -16,7 +19,6 @@
   }
   
   .elements__heart:hover {
-    background-image: url(../../../images/elements__heart_hover.svg);
     cursor: pointer;
-    transition: 0.5s ease-in-out;
+    opacity: 0.5;
   }
