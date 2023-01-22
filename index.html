@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="pages/index.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+</head>
+<body class="page">
+  <header class="header">
+    <a href="#" class="header__logo"></a>
+  </header>
+  <main class="content">
+    <section class="profile">
+      <div class="profile__avatar-button">
+        <div class="profile__info">
+          <img src="./images/profile__avatar.jpg" alt="фото Кусто" class="profile__avatar">
+          <div class="profile__group">
+            <div class="profile__text">
+              <h2 class="profile__title">Жак-Ив Кусто</h2>
+              <p class="profile__subtitle">Исследователь океана</p>
+            </div> 
+            <button class="profile__edit-button" type="button"></button>
+          </div>
+        </div>
+      </div>
+      <button class="profile__add-button" type="button"></button>
+    </section>
+    <section class="elements">
+      <div class="elements__rectangle">
+        <img src="images/elements__karachaevsk.jpg" alt="Карачаевск" class="elements__photo">
+        <div class="elements__group">
+          <p class="elements__title">Карачаевск</p>
+          <div class="elements__heart elements__heart_active"></div>
+        </div>
+      </div>
+      <div class="elements__rectangle">
+        <img src="images/elements__elbrus.jpg" alt="Эльбрус" class="elements__photo">
+        <div class="elements__group">
+          <p class="elements__title">Гора Эльбрус</p>
+          <div class="elements__heart elements__heart_active"></div>
+        </div>
+      </div>
+      <div class="elements__rectangle">
+        <img src="images/elements__dombay.jpg" alt="Домбай" class="elements__photo">
+        <div class="elements__group">
+          <p class="elements__title">Домбай</p>
+          <div class="elements__heart elements__heart_active"></div>
+        </div>
+      </div>
+      <div class="elements__rectangle">
+        <img src="images/elements__elbrus.jpg" alt="Эльбрус" class="elements__photo">
+        <div class="elements__group">
+          <p class="elements__title">Гора Эльбрус</p>
+          <div class="elements__heart elements__heart_active"></div>
+        </div>
+      </div>
+      <div class="elements__rectangle">
+        <img src="images/elements__dombay.jpg" alt="Домбай" class="elements__photo">
+        <div class="elements__group">
+          <p class="elements__title">Домбай</p>
+          <div class="elements__heart elements__heart_active"></div>
+        </div>
+      </div>
+      <div class="elements__rectangle">
+        <img src="images/elements__karachaevsk.jpg" alt="Карачаевск" class="elements__photo">
+        <div class="elements__group">
+          <p class="elements__title">Карачаево-Черкессия</p>
+          <div class="elements__heart elements__heart_active"></div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <p class="footer__copyright">&copy;&nbsp;2020&nbsp;Mesto Russia</p>
+    </footer>
+    <section class="popup">
+      <form class="popup__container" name="edit-form">
+        <p class="popup__title">Редактировать профиль</p>
+        <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Имя">
+        <input type="text" name="job" class="popup__input popup__input_type_job" placeholder="О себе">
+        <button class="popup__submit" type="submit">Сохранить</button>
+        <button class="popup__close" type="button"></button>
+      </form>
+    </section>
+  </main>
+<script src="index.js"></script>
+</body>
+</html>

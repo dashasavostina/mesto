@@ -1,0 +1,29 @@
+.popup__close {
+    position: fixed;
+    top: calc(50% - 205px);
+    left: calc(50% + 223px);
+    background-image: url(../../../images/popup__close.svg);
+    width: 32px;
+    height: 32px;
+    background-position: cover;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  .popup__close:hover {
+    opacity: 0.6;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .popup__close {
+      width: 20px;
+      height: 20px;
+      top: calc(50% - 198px);
+      left: calc(50% + 121px);
+      background-size: 20px 20px;
+    }
+  }

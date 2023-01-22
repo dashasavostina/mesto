@@ -1,0 +1,9 @@
+.profile__group {
+    display: flex;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .profile__group {
+      padding-left: 25px;
+    }
+  }

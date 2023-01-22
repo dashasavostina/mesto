@@ -1,0 +1,9 @@
+.elements__photo {
+    max-width: 282px;
+    max-height: 282px;
+    border-radius: 10px 10px 0 0;
+    display: block;
+    width: 100%;
+    border: none;
+    object-fit: cover;
+  }
