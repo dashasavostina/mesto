@@ -14,4 +14,4 @@
 
 **Проект в Github Pages**
 
-* [Ссылка на проект в Github Pages](https://dashasavostina.github.io/russian-travel/)
+* [Ссылка на проект в Github Pages](https://dashasavostina.github.io/mesto/)
