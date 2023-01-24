@@ -6,6 +6,7 @@
     padding-top: 45px;
     display: flex;
     justify-content: space-between;
+    box-sizing: border-box;
   }
 
   @media screen and (min-width: 1023px) and (max-width: 1280px) {
@@ -19,6 +20,12 @@
       max-width: calc(100% - 2 * 19px);
       padding-top: 28px;
       padding-left: 27px;
+    }
+  }
+
+  @media screen and (max-width: 613px) { 
+    .header {
+      max-width: 100%;
     }
   }
   

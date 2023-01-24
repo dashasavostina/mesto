@@ -5,7 +5,6 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 282px);
-    grid-template-rows: repeat(2, 361px);
     row-gap: 20px;
     column-gap: 17px;
     justify-content: center;
@@ -16,7 +15,6 @@
     .elements {
       max-width: calc(100% - 2 * 19px);
       grid-template-columns: repeat(auto-fit, minmax(282px, 282px));
-      grid-template-rows: repeat(auto-fit, minmax(361px, 361px));
     }
   }
   
