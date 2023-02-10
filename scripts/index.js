@@ -117,7 +117,7 @@ function renderCards() {
     imgCard.alt = item.name;
     elements.prepend(card);
     const imgView = popupView.querySelector('.popup__img');
-    const titleView = popupView.querySelector('.elements__title_type_view');
+    const titleView = popupView.querySelector('.popup__text');
     const imgAlt = popupView.querySelector('.popup__img');
     imgCard.addEventListener('click', function() {
       showPopup(popupView);
@@ -147,7 +147,7 @@ function createCard(item) {
   cardImg.src = item.link;
   cardImg.alt = item.name;
   const imgView = popupView.querySelector('.popup__img');
-    const titleView = popupView.querySelector('.elements__title_type_view');
+    const titleView = popupView.querySelector('.popup__text');
     const imgAlt = popupView.querySelector('.popup__img');
   cardImg.addEventListener('click', function() {
     showPopup(popupView);
