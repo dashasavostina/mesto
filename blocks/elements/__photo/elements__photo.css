@@ -4,6 +4,11 @@
     border-radius: 10px 10px 0 0;
     display: block;
     width: 100%;
+    height: 100%;
     border: none;
     object-fit: cover;
+  }
+
+  .elements__photo:hover {
+    cursor: pointer;
   }

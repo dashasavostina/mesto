@@ -26,7 +26,7 @@
       <button class="profile__add-button" type="button"></button>
     </section>
     <section class="elements">
-      <div class="elements__rectangle">
+      <!-- <div class="elements__rectangle">
         <img src="images/elements__karachaevsk.jpg" alt="Карачаевск" class="elements__photo">
         <div class="elements__group">
           <h2 class="elements__title">Карачаевск</h2>
@@ -67,21 +67,49 @@
           <h2 class="elements__title">Карачаево-Черкессия</h2>
           <button class="elements__heart" type="button"></button>
         </div>
-      </div>
+      </div> -->
     </section>
   </main>
   <footer class="footer">
     <p class="footer__copyright">&copy;&nbsp;2020&nbsp;Mesto Russia</p>
   </footer>
-  <section class="popup">
+  <template class="elements-template">
+    <div class="elements__rectangle">
+      <img class="elements__photo" src="#" alt="">
+      <button class="elements__trash" type="button"></button>
+      <div class="elements__group">
+        <h2 class="elements__title"></h2>
+        <button class="elements__heart" type="button"></button>
+      </div>
+    </div>
+  </template>
+  <section class="popup popup_type_edit">
     <div class="popup__container">
       <button class="popup__close" type="button"></button>
-      <h3 class="popup__title">Редактировать&nbsp;профиль</h3>
-      <form class="popup__form" name="edit-form">
+      <h3 class="popup__title-edit">Редактировать&nbsp;профиль</h3>
+      <form class="popup__form popup__form_profile" name="edit-form">
         <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Имя">
         <input type="text" name="job" class="popup__input popup__input_type_job" placeholder="О себе">
         <button class="popup__submit" type="submit">Сохранить</button>
       </form>
+    </div>
+  </section>
+  <section class="popup popup_type_add">
+    <div class="popup__container">
+      <button class="popup__close" type="button"></button>
+      <h3 class="popup__title">Новое&nbsp;место</h3>
+      <form class="popup__form popup__form_add" name="add-form">
+        <input type="text" name="title" class="popup__input popup__input_type_title" placeholder="Название">
+        <input type="text" name="image" class="popup__input popup__input_type_image" placeholder="Ссылка на картинку">
+        <button class="popup__submit popup__submit_add" type="submit">Создать</button>
+      </form>
+    </div>
+  </section>
+  <section class="popup popup_type_view">
+    <div class="popup__container-image">
+      <button class="popup__close" type="button"></button>
+      <img src="#" alt="" class="popup__img">
+      <h2 class="elements__title_type_view"></h2>
     </div>
   </section>
 <script src="scripts/index.js"></script>
