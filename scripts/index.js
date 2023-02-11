@@ -1,7 +1,7 @@
 //кнопка редактирования
 const buttonEdit = document.querySelector('.profile__edit-button');
 //кнопка закрытия попапов
-const buttonClose = document.querySelectorAll('.popup__close');
+const buttonCloseList = document.querySelectorAll('.popup__close');
 //формы попапов
 const formElementEditProfile = document.querySelector('.popup__form_profile');
 const formElementAddCard = document.querySelector('.popup__form_add');
@@ -50,7 +50,7 @@ formElementEditProfile.addEventListener('submit', handleFormSubmitEdit);
 const handleClickByCloseButton = (evt) => {
   closePopup(evt.target.closest('.popup'));
 };
-const renderButtonClose = Array.from(buttonClose).forEach(
+Array.from(buttonCloseList).forEach(
   (element) => {
     element.addEventListener('click', handleClickByCloseButton);
   }
