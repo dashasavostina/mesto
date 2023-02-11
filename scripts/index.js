@@ -18,13 +18,12 @@ const buttonAdd = document.querySelector('.profile__add-button');
 //кнопка сохранения карточки
 const submitButtonCard = document.querySelector('.popup__submit_add');
 //попапы-модификаторы
-const popupAdd = document.querySelector('.popup_type_add');
-const popupEdit = document.querySelector('.popup_type_edit');
-const popupView = document.querySelector('.popup_type_view');
+const popupAddCard = document.querySelector('.popup_type_add');
+const popupEditProfile = document.querySelector('.popup_type_edit');
+const popupViewImage = document.querySelector('.popup_type_view');
 
 const templateCards = document.querySelector('.elements-template').content.querySelector('.elements__rectangle');
 const cardsContainer = document.querySelector('.elements');
-const addButtonCard = document.querySelector('.popup_type_add');
 
 //функция открытия попапов
 function showPopup(popup) {
@@ -40,18 +39,16 @@ const closePopup = function(popup)  {
 buttonEdit.addEventListener('click', function() {
   nameInput.value = profileTitle.textContent;
   jobInput.value = profileSubtitle.textContent;
-  showPopup(popupEdit)});
+  showPopup(popupEditProfile)});
 buttonAdd.addEventListener('click', function () {
   titleInput.value = "";
   imageInput.value = "";
-  showPopup(popupAdd)});
+  showPopup(popupAddCard)});
 formElementEditProfile.addEventListener('submit', handleFormSubmitEdit);
 
 //функция закрытия по крестику
 const handleClickByCloseButton = (evt) => {
   closePopup(evt.target.closest('.popup'));
-  titleInput.value = "";
-  imageInput.value = "";
 };
 const renderButtonClose = Array.from(buttonClose).forEach(
   (element) => {
@@ -59,14 +56,19 @@ const renderButtonClose = Array.from(buttonClose).forEach(
   }
 );
 
+//функция вставки карточки в контейнер
+function renderCard(card) {
+  cardsContainer.prepend(card);
+}
+
 //функция добавления новой карточки
 formElementAddCard.addEventListener('submit', (evt) => {
   evt.preventDefault();
   const title = titleInput.value;
   const link = imageInput.value;
   const card = createCard({name: title, link: link});
-  cardsContainer.prepend(card);
-  closePopup(popupAdd);
+  renderCard(card);
+  closePopup(popupAddCard);
 })
 
 //функция редактирования профиля
@@ -74,7 +76,7 @@ function handleFormSubmitEdit (evt) {
   evt.preventDefault(); 
   profileTitle.textContent = nameInput.value;
   profileSubtitle.textContent = jobInput.value;
-  closePopup(popupEdit);
+  closePopup(popupEditProfile);
 }
 
 //функция лайка
@@ -82,14 +84,14 @@ const handleLikeButton = function(evt) {
   evt.target.classList.toggle('elements__heart_active')}
 
 //рендер карточек
-function renderCards() {
+function renderInitialCards() {
   const cards = initialCards.map((card) => {
-    return createCard(card);
+    return createCard(card)
   })
-  cardsContainer.prepend(...cards);
+cardsContainer.prepend(...cards);
 }
 
-renderCards(initialCards);
+renderInitialCards();
   
 //функция создания карточки
 function createCard(cardData) {
@@ -98,14 +100,13 @@ function createCard(cardData) {
   const cardImg = card.querySelector('.elements__photo');
   cardImg.src = cardData.link;
   cardImg.alt = cardData.name;
-  const imgView = popupView.querySelector('.popup__img');
-    const titleView = popupView.querySelector('.popup__text');
-    const imgAlt = popupView.querySelector('.popup__img');
+  const imgView = popupViewImage.querySelector('.popup__img');
+  const titleView = popupViewImage.querySelector('.popup__text');
   cardImg.addEventListener('click', function() {
-    showPopup(popupView);
+    showPopup(popupViewImage);
     imgView.src = cardData.link;
     titleView.textContent = cardData.name;
-    imgAlt.alt = cardData.name;
+    imgView.alt = cardData.name;
   })
 
   card
@@ -116,6 +117,6 @@ function createCard(cardData) {
     .querySelector('.elements__trash')
     .addEventListener('click', () => {
       card.remove();
-    }) ;
+    });
     return card;
   }
