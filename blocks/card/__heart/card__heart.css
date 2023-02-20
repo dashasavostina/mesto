@@ -1,4 +1,4 @@
-.elements__heart {
+.card__heart {
     background-image: url(../../../images/elements__heart.svg);
     width: 22px;
     height: 19px;
@@ -13,12 +13,12 @@
   }
   
   @media screen and (max-width: 768px) {
-    .elements__heart {
+    .card__heart {
       margin-right: 19px;
     }
   }
   
-  .elements__heart:hover {
+  .card__heart:hover {
     cursor: pointer;
     opacity: 0.5;
   }

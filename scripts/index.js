@@ -24,7 +24,7 @@ const popupViewImage = document.querySelector('.popup_type_view');
 //попапы
 const popupList = document.querySelectorAll('.popup');
 
-const templateCards = document.querySelector('.elements-template').content.querySelector('.elements__rectangle');
+const templateCards = document.querySelector('.elements-template').content.querySelector('.card');
 const cardsContainer = document.querySelector('.elements');
 
 //функция открытия попапов
@@ -105,7 +105,7 @@ function handleFormSubmitEdit (evt) {
 
 //функция лайка
 const handleLikeButton = function(evt) {
-  evt.target.classList.toggle('elements__heart_active')}
+  evt.target.classList.toggle('card__heart_active')}
 
 //рендер карточек
 function renderInitialCards() {
@@ -120,8 +120,8 @@ renderInitialCards();
 //функция создания карточки
 function createCard(cardData) {
   const card = templateCards.cloneNode(true);
-  card.querySelector('.elements__title').textContent = cardData.name;
-  const cardImg = card.querySelector('.elements__photo');
+  card.querySelector('.card__title').textContent = cardData.name;
+  const cardImg = card.querySelector('.card__photo');
   cardImg.src = cardData.link;
   cardImg.alt = cardData.name;
   const imgView = popupViewImage.querySelector('.popup__img');
@@ -134,11 +134,11 @@ function createCard(cardData) {
   })
 
   card
-    .querySelector('.elements__heart')
+    .querySelector('.card__heart')
     .addEventListener('click', handleLikeButton);
 
   card
-    .querySelector('.elements__trash')
+    .querySelector('.card__trash')
     .addEventListener('click', () => {
       card.remove();
     });
