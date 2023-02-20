@@ -5,3 +5,7 @@
     display: flex;
     flex-direction: column;
 }
+
+.popup__container-image:hover {
+    cursor: auto;
+}

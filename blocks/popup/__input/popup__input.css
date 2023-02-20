@@ -1,5 +1,5 @@
 .popup__input {
-  margin: 0 auto 25px;
+  margin: 30px auto 0;
   width: 358px;
   height: 27px;
   border: none;
@@ -9,12 +9,12 @@
   font-size: 14px;
   line-height: 1.2;
   color: #000;
-  padding-bottom: 5px;
+  /*padding-bottom: 5px;*/
 }
 
 @media screen and (max-width: 768px) {
 .popup__input {
   width: 238px;
-  margin-bottom: 25px;
+  margin-bottom: 0;
 }
 }

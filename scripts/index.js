@@ -21,6 +21,8 @@ const submitButtonCard = document.querySelector('.popup__submit_add');
 const popupAddCard = document.querySelector('.popup_type_add');
 const popupEditProfile = document.querySelector('.popup_type_edit');
 const popupViewImage = document.querySelector('.popup_type_view');
+//попапы
+const popupList = document.querySelectorAll('.popup');
 
 const templateCards = document.querySelector('.elements-template').content.querySelector('.elements__rectangle');
 const cardsContainer = document.querySelector('.elements');
@@ -28,11 +30,13 @@ const cardsContainer = document.querySelector('.elements');
 //функция открытия попапов
 function showPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closeByEscape);
 }
 
 //функция закрытия попапов
 const closePopup = function(popup)  {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closeByEscape);
 }
 
 //слушатели
@@ -56,6 +60,23 @@ Array.from(buttonCloseList).forEach(
   }
 );
 
+//функция закрытия попапа по оверлей 
+document.addEventListener('mousedown', (evt) => {
+  if (evt.target.classList.contains('popup_opened') ) {
+    evt.preventDefault();
+    closePopup(evt.target.closest('.popup'))
+  }
+});
+
+//функция закрытия попапа по кнопке Esc
+const closeByEscape = (evt) => {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup);
+  }
+}
+
+
 //функция вставки карточки в контейнер
 function renderCard(card) {
   cardsContainer.prepend(card);
@@ -69,6 +90,9 @@ formElementAddCard.addEventListener('submit', (evt) => {
   const card = createCard({name: title, link: link});
   renderCard(card);
   closePopup(popupAddCard);
+  formElementAddCard.reset();
+  submitButtonCard.classList.add('popup__submit_disabled');
+  submitButtonCard.disabled = true;
 })
 
 //функция редактирования профиля
