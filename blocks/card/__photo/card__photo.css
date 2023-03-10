@@ -9,6 +9,6 @@
     object-fit: cover;
   }
 
-  .elements__photo:hover {
+  .card__photo:hover {
     cursor: pointer;
   }
