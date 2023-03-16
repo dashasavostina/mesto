@@ -20,6 +20,7 @@ export default class Card {
     generateCard() {
       this._element = this._getTemplate();
       this._cardImg = this._element.querySelector('.card__photo');
+      this._like = this._element.querySelector('.card__heart');
       this._cardImg.src = this._link;
       this._cardImg.alt = this._title;
       this._element.querySelector('.card__title').textContent = this._name;
@@ -29,7 +30,6 @@ export default class Card {
     }
 
     _setEventListeners() {
-      this._like = this._element.querySelector('.card__heart');
       this._like.addEventListener('click', () => {
         this._handleLikeButton();
       });
