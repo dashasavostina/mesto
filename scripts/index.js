@@ -68,6 +68,7 @@ buttonEdit.addEventListener('click', function() {
   jobInput.value = profileSubtitle.textContent;
   showPopup(popupEditProfile)});
 buttonAdd.addEventListener('click', function () {
+  formElementAddCard.reset();
   formValidators['add-form'].resetValidation();
   showPopup(popupAddCard)});
 formElementEditProfile.addEventListener('submit', handleFormSubmitEdit);
@@ -114,7 +115,6 @@ formElementAddCard.addEventListener('submit', (evt) => {
   const objInput = {name: titleInput.value, link: imageInput.value};
   createCard(objInput);
   closePopup(popupAddCard);
-  formValidators['add-form'].resetValidation();
   formElementAddCard.reset();
 })
 
@@ -124,8 +124,6 @@ function handleFormSubmitEdit (evt) {
   profileTitle.textContent = nameInput.value;
   profileSubtitle.textContent = jobInput.value;
   closePopup(popupEditProfile);
-  titleInput.value = "";
-  imageInput.value = "";
 }
 
   //функция открытия попапа картинки
