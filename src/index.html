@@ -2,7 +2,6 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="pages/index.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesto</title>
@@ -14,7 +13,7 @@
   <main class="content">
     <section class="profile">
       <div class="profile__info">
-        <img src="./images/profile__avatar.jpg" alt="фото Кусто" class="profile__avatar">
+        <img src="<%=require('./images/profile__avatar.jpg')%>" alt="фото Кусто" class="profile__avatar">
         <div class="profile__group">
           <div class="profile__text">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -81,9 +80,5 @@
       <h2 class="popup__text"></h2>
     </div>
   </section>
-<script type="module" src="scripts/cards.js"></script>
-<script type="module" src="scripts/index.js"></script>
-<script type="module" src="scripts/FormValidator.js"></script>
-<script type="module" src="scripts/Card.js"></script>
 </body>
 </html>

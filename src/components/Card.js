@@ -1,10 +1,10 @@
 //класс создания карточки
 export default class Card {
-    constructor(data, templateSelector, handleOpenPopup) {
+    constructor(data, templateSelector, handleCardClick) {
       this._name = data.name;
       this._link = data.link;
       this._templateSelector = templateSelector;
-      this._handleOpenPopup = handleOpenPopup;
+      this._handleCardClick = handleCardClick;
     }
 
     _getTemplate() {
@@ -40,7 +40,7 @@ export default class Card {
       });
 
       this._cardImg.addEventListener('click', () => {
-        this._handleOpenPopup(this._name, this._link);
+        this._handleCardClick({name: this._name, link: this._link});
       });
     }
 
