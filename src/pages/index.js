@@ -1,6 +1,6 @@
 import FormValidator from "../components/FormValidator.js";
 import Card from "../components/Card.js";
-import { initialCards } from "../components/cards.js";
+import { initialCards } from "../utils/cards.js";
 import Section from "../components/Section.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
@@ -92,6 +92,5 @@ function renderCard(card) {
 //функция создания новой карточки
 function createCard(item) {
   const card = new Card (item, '.elements-template', handleCardClick).generateCard();
-  renderCard(card);
   return card;
 }
