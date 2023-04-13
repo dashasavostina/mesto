@@ -169,8 +169,8 @@ const createCard = function (cardObject) {
     '.elements-template',
     userId,
     {cardId: cardObject._id, ownerId: cardObject.owner._id, }, {
-    handleCardClick: (data) => {
-      popupWithImage.open(data)},
+    handleCardClick: () => {
+      popupWithImage.open(cardObject)},
 
     handleCardDelete: (cardElement, cardId) => {
       popupConfirmation.open(cardElement, cardId)},
