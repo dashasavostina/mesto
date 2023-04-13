@@ -175,7 +175,7 @@ const createCard = function (cardObject) {
     handleCardDelete: (cardElement, cardId) => {
       popupConfirmation.open(cardElement, cardId)},
 
-    handleCardLike: () => {
+    handleCardLike: (_id) => {
       apiJoin.sendCardLike(_id)
       .then((res) => {
         card.renderCardLike(res);
