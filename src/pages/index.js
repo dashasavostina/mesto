@@ -175,8 +175,8 @@ const createCard = function (cardObject) {
     handleCardDelete: (cardElement, cardId) => {
       popupConfirmation.open(cardElement, cardId)},
 
-    handleCardLike: (card) => {
-      apiJoin.sendCardLike(card)
+    handleCardLike: () => {
+      apiJoin.sendCardLike(_id)
       .then((res) => {
         card.renderCardLike(res);
       })
@@ -185,8 +185,8 @@ const createCard = function (cardObject) {
       })
     },
 
-    handleCardDeleteLike: (card) => {
-      apiJoin.deleteCardLike(card)
+    handleCardDeleteLike: (_id) => {
+      apiJoin.deleteCardLike(_id)
        .then((res) => {
         card.renderCardLike(res);
        })

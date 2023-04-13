@@ -63,8 +63,8 @@ export default class Api {
           .then(res => { return this._serverResponceProcessing(res) })
       }
 
-    sendCardLike(id) {
-        return fetch(`${this._link}cards/${id}/likes`, {
+    sendCardLike(_id) {
+        return fetch(`${this._link}cards/${_id}/likes`, {
           headers: this._headers,
           method: 'PUT',
         })
