@@ -6,7 +6,7 @@
 .elements{align-items:center;-moz-column-gap:17px;column-gap:17px;display:grid;grid-template-columns:repeat(3,282px);justify-content:center;margin:0 auto;padding-bottom:66px;padding-top:50px;row-gap:20px;width:100%}@media screen and (max-width:1216px){.elements{grid-template-columns:repeat(auto-fit,minmax(282px,282px));max-width:calc(100% - 38px)}}@media screen and (max-width:768px){.elements{padding-bottom:48px;padding-top:36px}}
 .card{background-color:#fff;border-radius:10px;box-sizing:border-box;height:100%;min-height:361px;min-width:282px;position:relative;width:100%}
 .card__group{display:flex;justify-content:space-between}
-.card__heart{background-color:transparent;background-image:url(87ed371465c7a6a1cd01.svg);background-position:cover;background-repeat:no-repeat;border:none;height:19px;padding:0;transition:.5s ease-in-out;width:22px}@media screen and (max-width:768px){.card__heart{margin-right:19px}}.card__heart:hover{cursor:pointer;opacity:.5}
+.card__heart{background-color:transparent;background-image:url(87ed371465c7a6a1cd01.svg);background-position:cover;background-repeat:no-repeat;border:none;height:19px;padding:0;transition:.5s ease-in-out;width:22px}.card__heart:hover{cursor:pointer;opacity:.5}
 .card__photo{border:none;border-radius:10px 10px 0 0;display:block;height:100%;max-height:282px;max-width:282px;-o-object-fit:cover;object-fit:cover;width:100%}.card__photo:hover{cursor:pointer}
 .card__title{color:#000;font-size:24px;font-weight:900;line-height:1.2;margin:0;max-width:195px;overflow:hidden;padding:25px 0 25px 21px;text-overflow:ellipsis;white-space:nowrap}
 .profile{display:flex;justify-content:space-between;margin:40px auto 0;max-width:calc(100% - 400px);width:100%}@media screen and (min-width:1023px) and (max-width:1280px){.profile{max-width:880px}}@media screen and (max-width:1023px){.profile{flex-direction:column;justify-content:center;max-width:calc(100% - 38px)}}
@@ -45,4 +45,7 @@
 .card__heart-counter{color:#000;font-size:13px;font-weight:400;line-height:1.2;margin:0;padding:5px 0 0}
 .profile__avatar-edit{background:none;border:none;border-radius:50%;height:120px;margin:0;padding:0;position:absolute;width:120px}.profile__avatar-edit:hover{background:rgba(0,0,0,.8) url(a086f758840ae814ecde.svg) no-repeat 50%;cursor:pointer}
 .profile__avatar{display:flex;margin:0;padding:0}
+.popup__title_avatar{margin:0;padding:34px 147px 43px 0}
+.popup__title_confirm{padding:34px 194px 0 0}@media screen and (max-width:768px){.popup__title{font-size:18px;padding:25px 134px 0 22px}}
+.popup__submit_confirm{margin:38px 0 36px}
 
