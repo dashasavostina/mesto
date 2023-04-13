@@ -1,0 +1,10 @@
+.popup__title_confirm {
+    padding: 34px 194px 0px 0px;
+}
+
+@media screen and (max-width: 768px) {
+    .popup__title {
+      font-size: 18px;
+      padding: 25px 134px 0px 22px;
+    }
+  }

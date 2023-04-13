@@ -4,18 +4,12 @@
     height: 19px;
     background-repeat: no-repeat;
     background-position: cover;
-    margin-top: 30px;
-    margin-right: 21px;
+    /*margin-top: 30px;
+    margin-right: 21px;*/
     padding: 0;
     transition: 0.5s ease-in-out;
     background-color: transparent;
     border: none;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .card__heart {
-      margin-right: 19px;
-    }
   }
   
   .card__heart:hover {
