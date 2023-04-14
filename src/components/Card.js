@@ -83,9 +83,9 @@ export default class Card {
 
     _handleLikeButton() {
       if (this._checkLikeCard()) {
-        this._handleCardDeleteLike(this._cardId)
+        this._handleCardDeleteLike(this)
       } else {
-        this._handleCardLike(this._cardId)
+        this._handleCardLike(this)
       }
     };
   }

@@ -63,16 +63,16 @@ export default class Api {
           .then(res => { return this._serverResponceProcessing(res) })
       }
 
-    sendCardLike(_id) {
-        return fetch(`${this._link}cards/${_id}/likes`, {
+    sendCardLike(cardId) {
+        return fetch(`${this._link}cards/${cardId}/likes`, {
           headers: this._headers,
           method: 'PUT',
         })
           .then(res => { return this._serverResponceProcessing(res) })
       }
 
-    deleteCardLike(id) {
-        return fetch(`${this._link}cards/${id}/likes`, {
+    deleteCardLike(cardId) {
+        return fetch(`${this._link}cards/${cardId}/likes`, {
           headers: this._headers,
           method: 'DELETE',
         })
