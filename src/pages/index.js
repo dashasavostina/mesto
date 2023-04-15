@@ -7,89 +7,45 @@ import UserInfo from "../components/UserInfo.js";
 import Api from "../components/Api.js";
 import PopupConfirmation from "../components/PopupConfirmation.js";
 import "./index.css";
+import { buttonEdit, buttonEditAvatar, formElementAddCard, profileTitle, profileSubtitle, 
+        buttonAdd, popupAddCard, popupEditProfile, popupViewImage, popupEditAvatar, popupConfirmationSelector,
+        apiData, options 
+      } from "../utils/constants.js"
 
-//кнопка редактирования
-const buttonEdit = document.querySelector('.profile__edit-button');
-const buttonEditAvatar = document.querySelector('.profile__avatar-edit');
-//формы попапов
-const formElementAddCard = document.querySelector('.popup__form_add');
-
-//профиль
-const profileTitle = '.profile__title';
-const profileSubtitle = '.profile__subtitle';
-//кнопка добавления карточки
-export const buttonAdd = document.querySelector('.profile__add-button');
-//попапы-модификаторы
-const popupAddCard = '.popup_type_add';
-const popupEditProfile = '.popup_type_edit';
-const popupViewImage = '.popup_type_view';
-const popupEditAvatar = '.popup_type_avatar-add';
-const popupConfirmationSelector = '.popup_type_confirm';
-
-
-const apiData = {
-  link: 'https://mesto.nomoreparties.co/v1/cohort-63/',
-  headers: {
-    authorization: '63c1674b-e0d6-4861-a55c-25296a36a323',
-    'Content-Type': 'application/json'
-  }
-}
-
-const options = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__submit',
-  inactiveButtonClass: 'popup__submit_disabled',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__error_visible'
-};
-
+//объявление апи
 const apiJoin = new Api(apiData);
 let userId;
 
 //добавление карточки в секцию
 const submitAddCardFormHandler = ({title, image}) => {
-  popupWithFormAddCard.setSavingProcessText();
-  apiJoin.addNewCard({name: title, link: image})
+  return apiJoin.addNewCard({name: title, link: image})
   .then((card) => {
     cardList.addItem(createCard(card));
-    popupWithFormAddCard.close();
   })
   .catch((err) => {
     console.log(`При добавлении новой карточки возникла ошибка: ${err}`)
   })
-  .finally(() => {
-    popupWithFormAddCard.returnSavingProcessText();
-  })
 }
 
+//функция обработчика сабмита профиля
 const submitEditProfileFormHandler = (userProfileData) => {
-  popupProfile.setSavingProcessText();
-  apiJoin.sendUserData(userProfileData)
+  return apiJoin.sendUserData(userProfileData)
   .then(res => {
     userInfo.setUserInfo({name: res.name, job: res.about});
-    popupProfile.close();
   })
   .catch((err) => {
     console.log(`При редактировании профиля произошла ошибка: ${err}`)
   })
-  .finally(() => {
-    popupProfile.returnSavingProcessText()
-  })
 }
 
+//функция обработчика сабмита аватара
 const submitEditAvatarFormHandler = (userProfileData) => {
-  popupWithEditAvatar.setSavingProcessText();
-  apiJoin.sendAvatarData(userProfileData)
+  return apiJoin.sendAvatarData(userProfileData)
   .then((res) => {
     userInfo.setUserAvatar(res.avatar);
-    popupWithEditAvatar.close();
     })
     .catch(err => {
       console.log(`Ошибка обновления аватара: ${err}`)
-   })
-   .finally(() => {
-     popupWithEditAvatar.returnSavingProcessText();
    })
   }
 
@@ -104,7 +60,7 @@ const callbackConfirmation = (cardElement, cardId) => {
   })
 }
 
-
+//объявление попапов
 const popupProfile = new PopupWithForm(popupEditProfile, submitEditProfileFormHandler);
 popupProfile.setEventListeners();
 const popupWithImage = new PopupWithImage(popupViewImage);
@@ -120,11 +76,13 @@ popupWithEditAvatar.setEventListeners();
 const popupConfirmation = new PopupConfirmation(popupConfirmationSelector, callbackConfirmation);
 popupConfirmation.setEventListeners();
 
+//функция отрисовки карточки в секцию
 const cardList = new Section({renderer: (item) => {
   const card = createCard(item);
   cardList.addItem(card)}
     }, '.elements');
 
+//промисы получения данных с сервера
 Promise.all([ apiJoin.getUserData(), apiJoin.getInitialCards() ])
   .then(([ userProfileData, cardObject ]) => {
     userId = userProfileData._id;

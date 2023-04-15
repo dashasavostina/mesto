@@ -28,20 +28,18 @@ export default class PopupWithForm extends Popup {
         super.close();
     }
 
-    setSavingProcessText() {
-      this._submitButton.textContent = 'Сохранение...';
-    }
-
-    returnSavingProcessText() {
-      this._submitButton.textContent = this._submitButtonText;
-    }
-
     setEventListeners() {
+      super.setEventListeners();
+    
       this._form.addEventListener('submit', (evt) => {
         evt.preventDefault();
-        this._submitFormHandler(this._getInputValues());
-        this.close();
+        const initialText = this._submitButton.textContent;
+        this._submitButton.textContent = 'Сохранение...';
+        this._submitFormHandler(this._getInputValues())
+          .then(() => this.close())
+          .finally(() => {
+            this._submitButton.textContent = initialText;
+          }) 
       });
-      super.setEventListeners();
     }
 }
