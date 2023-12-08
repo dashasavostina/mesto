@@ -9,12 +9,12 @@
 Через npm подключены модули для улучшения производительности. Проект подключён к серверу через API.
 
 ### Стек технологий
-• HTML 5 
-• CSS 3 
-• JavaScript 
-• Media queries
-• Webpack 
-• API
+- HTML 5
+- CSS 3
+- JavaScript
+- Media queries
+- Webpack
+- API
 
 **Figma**
 
